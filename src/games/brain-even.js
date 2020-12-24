@@ -2,9 +2,11 @@ import { randomNumber, isEven } from '../utils.js';
 
 const generateRounds = () => {
   const rounds = [];
+
   for (let i = 0; i < 3; i += 1) {
     const question = randomNumber();
     const answer = isEven(question) ? 'yes' : 'no';
+
     rounds.push({ question, answer });
   }
 
