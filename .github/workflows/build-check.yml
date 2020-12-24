@@ -25,5 +25,8 @@ jobs:
       - name: Install modules
         run: make install
 
+        env:
+          CI: true
+
       - name: Run ESLint
         run: make lint
