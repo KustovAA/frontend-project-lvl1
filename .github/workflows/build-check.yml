@@ -9,9 +9,18 @@ jobs:
     name: Lint code base
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node2v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Install modules
         run: make install
