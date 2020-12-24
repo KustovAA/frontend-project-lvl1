@@ -5,7 +5,7 @@ on:
   - pull_request
 
 jobs:
-  lint:
+  build:
     name: Lint code base
     runs-on: ubuntu-latest
 
