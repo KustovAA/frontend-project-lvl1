@@ -1,11 +1,11 @@
-name: CI
+name: build
 
 on:
   - push
   - pull_request
 
 jobs:
-  build:
+  lint:
     name: Lint code base
     runs-on: ubuntu-latest
 
