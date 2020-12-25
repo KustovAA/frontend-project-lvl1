@@ -4,7 +4,7 @@ import cli from './cli.js';
 const run = (game) => {
   const name = cli();
 
-  game.printRules();
+  console.log(game.rules);
 
   const didWin = game.rounds.every((round) => {
     const { question, answer } = round;

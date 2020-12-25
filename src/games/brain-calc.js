@@ -29,7 +29,7 @@ const generateRounds = () => {
 
 const game = {
   rounds: generateRounds(),
-  printRules: () => console.log('What is the result of the expression?'),
+  rules: 'What is the result of the expression?',
 };
 
 export default game;

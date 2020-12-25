@@ -29,7 +29,7 @@ const generateRounds = () => {
 
 const game = {
   rounds: generateRounds(),
-  printRules: () => console.log('Find the greatest common divisor of given numbers.'),
+  rules: 'Find the greatest common divisor of given numbers.',
 };
 
 export default game;

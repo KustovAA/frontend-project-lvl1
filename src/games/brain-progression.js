@@ -31,7 +31,7 @@ const generateRounds = () => {
 
 const game = {
   rounds: generateRounds(),
-  printRules: () => console.log('What number is missing in the progression'),
+  rules: 'What number is missing in the progression',
 };
 
 export default game;
