@@ -32,7 +32,7 @@ jobs:
         run: make lint
 
   test:
-    name: Lint code base
+    name: Test code base
     runs-on: ubuntu-latest
 
     strategy:
