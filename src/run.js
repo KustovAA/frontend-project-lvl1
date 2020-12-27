@@ -9,7 +9,7 @@ const run = (game) => {
   const didWin = game.rounds.every((round) => {
     const { question, answer } = round;
 
-    console.log('Question: ', question);
+    console.log('Question:', question);
 
     const userAnswer = readlineSync.question('Your answer: ');
 
