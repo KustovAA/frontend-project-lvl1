@@ -1,7 +1,8 @@
 import { randomNumber } from '../utils.js';
 
-const findGCD = (...args) => {
-  let [a, b] = args;
+const findGCD = (first, second) => {
+  let a = first;
+  let b = second;
   let t;
   while (a !== 0 && b !== 0) {
     t = b;
