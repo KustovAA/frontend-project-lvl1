@@ -1,11 +1,11 @@
-import { randomNumber } from '../utils.js';
+import randomNumber from '../randomNumber.js';
+import { DEFAULT_ROUND_COUNT } from '../run.js';
 
-const generateProgression = (step, length) => {
+const generateProgression = (start, step, length) => {
   const result = [];
-  const start = randomNumber();
 
   for (let i = start; i < length + start; i += 1) {
-    result.push(i * step);
+    result.push(start + (i - start) * step);
   }
 
   return result;
@@ -14,10 +14,11 @@ const generateProgression = (step, length) => {
 const generateRounds = () => {
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < DEFAULT_ROUND_COUNT; i += 1) {
+    const start = randomNumber();
     const step = randomNumber(1, 8);
     const length = randomNumber(5, 12);
-    const progression = generateProgression(step, length);
+    const progression = generateProgression(start, step, length);
     const hiddenPos = randomNumber(0, length - 1);
     const answer = String(progression[hiddenPos]);
     progression[hiddenPos] = '..';
@@ -29,9 +30,9 @@ const generateRounds = () => {
   return rounds;
 };
 
-const game = {
+const getGameData = () => ({
   rounds: generateRounds(),
   rules: 'What number is missing in the progression',
-};
+});
 
-export default game;
+export default getGameData;

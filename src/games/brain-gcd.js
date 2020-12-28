@@ -1,4 +1,5 @@
-import { randomNumber } from '../utils.js';
+import randomNumber from '../randomNumber.js';
+import { DEFAULT_ROUND_COUNT } from '../run.js';
 
 const findGCD = (first, second) => {
   let a = first;
@@ -16,7 +17,7 @@ const findGCD = (first, second) => {
 const generateRounds = () => {
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < DEFAULT_ROUND_COUNT; i += 1) {
     const operand1 = randomNumber();
     const operand2 = randomNumber();
     const question = `${operand1} ${operand2}`;
@@ -28,9 +29,9 @@ const generateRounds = () => {
   return rounds;
 };
 
-const game = {
+const getGameData = () => ({
   rounds: generateRounds(),
   rules: 'Find the greatest common divisor of given numbers.',
-};
+});
 
-export default game;
+export default getGameData;

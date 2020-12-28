@@ -1,9 +1,12 @@
-import { randomNumber, isEven } from '../utils.js';
+import randomNumber from '../randomNumber.js';
+import { DEFAULT_ROUND_COUNT } from '../run.js';
+
+const isEven = (val) => val % 2 === 0;
 
 const generateRounds = () => {
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < DEFAULT_ROUND_COUNT; i += 1) {
     const question = randomNumber();
     const answer = isEven(question) ? 'yes' : 'no';
 
@@ -13,9 +16,9 @@ const generateRounds = () => {
   return rounds;
 };
 
-const game = {
+const getGameData = () => ({
   rounds: generateRounds(),
   rules: 'Answer "yes" if the number is even, otherwise answer "no".',
-};
+});
 
-export default game;
+export default getGameData;
